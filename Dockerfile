@@ -1,14 +1,10 @@
 # Usa a imagem oficial do n8n
-FROM n8nio/n8n:latest
+FROM n8nio/n8n:production-0.230.0
 
-# Ativa autenticação para proteger o painel
-ENV N8N_BASIC_AUTH_ACTIVE=true
-ENV N8N_BASIC_AUTH_USER=CaioManfio00
-ENV N8N_BASIC_AUTH_PASSWORD=160509
-
-# URL pública do serviço (vai ser o link gerado pelo Render)
-ENV WEBHOOK_URL=https://SEU-SUBDOMINIO.onrender.com/
-
+# Variáveis de ambiente podem ser definidas no painel do Render
+# para login seguro, não coloque usuário/senha aqui se for público
 EXPOSE 5678
 
-CMD ["n8n", "start"]
+# Comando para iniciar o n8n
+ENTRYPOINT ["n8n"]
+CMD ["start"]
