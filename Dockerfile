@@ -1,5 +1,10 @@
-# Usa a imagem oficial mais recente do n8n
 FROM n8nio/n8n:latest
+
+ENV N8N_BASIC_AUTH_ACTIVE=true
+ENV N8N_BASIC_AUTH_USER=Manfiox
+ENV N8N_BASIC_AUTH_PASSWORD=@Tavuman2
+ENV PORT=5678
+ENV WEBHOOK_URL=https://n8n-t0xx.onrender.com/
 
 EXPOSE 5678
 
